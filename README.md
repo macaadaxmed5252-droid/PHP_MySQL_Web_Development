@@ -49,4 +49,11 @@ This repository documents my academic journey and technical coursework in modern
 │   │   └── PHP_String_Functions.png
 │   ├── Home.php
 │   └── README.md
+├── Week-two/
+│   ├── screenshot/
+│   │   ├── PHP_Constants_And_Conditionals.png
+│   │   ├── PHP_Square_Calculation_And_Nested_Loops.png
+│   │   └── PHP_Ternary_And_Basic_Loops.png
+│   ├── Index.php
+│   └── README.md
 └── README.md
