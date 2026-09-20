@@ -1,46 +1,57 @@
-# Week 2: Control Structures, Logic & Iteration
+# Week 2 (Part 1): Control Structures, Logic & Iteration Architecture
 
-Welcome to the **Week 2** module of the PHP & MySQL development course. This repository contains practical implementations focusing on language constants, conditional branching logic (`if/else`, `switch`, Ternary operator), and loop iterations (`while`, `do-while`, `for`, and Nested Loops).
+Welcome to the **Week 2 (Part 1)** technical documentation for the Web Application Development module. This repository details the runtime execution mechanics, scope constructs, conditional branch evaluation, and iteration protocols implemented in `Index.php`.
 
 ---
 
-## 📸 Code Execution & Visual Proofs
+## 🎯 Learning Objectives
 
-Below are the screenshots depicting the structural breakdown of the source code executed during Week 2:
+By the end of this practical module, the core architectural goals achieved include:
+* **Immutable State Management:** Understanding language constants (`define()`) vs runtime dynamic variable assignment[cite: 25, 34].
+* **Control Flow Determination:** Evaluating standard `if/else` branching, discrete matching via `switch` control blocks, and short-circuit ternary evaluation[cite: 25, 27, 28, 29, 30].
+* **Loop Mechanics & Execution Safety:** Differentiating entry-controlled (`while`) vs exit-controlled (`do-while`) execution behavior[cite: 30, 31].
+* **Algorithmic Iteration & Matrix Evaluation:** Implementing bounded sequence processing and multi-dimensional nested loops for matrix operations[cite: 25, 32, 33].
 
-### 1. Constants & Conditional Logic (`if/else` & `switch`)
-Demonstrates declaring global constants using `define()`, simple `if/else` evaluation, and multi-branch decision-making with `switch-case` statements.
+---
+
+## 📖 Key Definitions & Concepts
+
+* **Control Structure:** A programmatic block that analyzes variable states and dictates the direction of execution flow based on parameters[cite: 25].
+* **Constant Scope:** A global language identifier whose bound value cannot be reassigned or unbound during script execution[cite: 34].
+* **Entry-Controlled Loop:** A loop condition checked *before* the body statement executes; if false, code inside never runs[cite: 30, 31].
+* **Exit-Controlled Loop:** A loop condition checked *after* the body statement executes; guarantees execution at least once[cite: 31].
+* **Multi-Dimensional Iteration:** Nesting loop structures where each outer iteration triggers a full execution cycle of the inner loop[cite: 33].
+
+---
+
+## 📸 Technical Implementation & Visual Evidence
+
+### 1. Global Constants & Multi-Branch Conditional Logic
 
 ![Constants and Conditional Logic](./screenshot/PHP_Constants_And_Conditionals.png)
 
+#### 📝 Technical Overview & Code Breakdown:
+* **`define("age", 123)`:** Initializes an immutable global constant[cite: 34]. Unlike standard variables (`$Age`), constants bypass variable interpolation rules and dollar sign syntax[cite: 34].
+* **If / Else Conditionals (`$Age >= 18`):** Evaluates boolean conditions to dynamically direct runtime flow between discrete execution branches[cite: 25, 26].
+* **Switch Evaluation Structure:** Tests continuous equality matches against discrete expressions (`$Marks = 100`)[cite: 27]. Includes `break` keywords to prevent automatic fall-through behavior across cases[cite: 27, 28].
+
 ---
 
-### 2. Ternary Operators & Basic Iteration Loops
-Demonstrates compact conditional evaluation using the Ternary Operator (`? :`), alongside entry-controlled (`while`) and exit-controlled (`do-while`) loop structures.
+### 2. Compact Ternary Expressions & Entry/Exit Loop Control
 
 ![Ternary Operator and Basic Loops](./screenshot/PHP_Ternary_And_Basic_Loops.png)
 
+#### 📝 Technical Overview & Code Breakdown:
+* **Ternary Operator (`? :`):** Short-hand conditional operator evaluating `(condition) ? true_expr : false_expr`[cite: 29, 30]. Optimizes memory and code lines for basic assignment checks[cite: 30].
+* **`while` Loop Mechanics:** Evaluates `$counter <= 5` prior to block execution[cite: 30, 31]. Increments internal counters explicitly (`$counter++`) to prevent infinite looping conditions.
+* **`do-while` Loop Structure:** Guarantees a minimum single execution pass before evaluating the termination criteria `$count <= 5`[cite: 31].
+
 ---
 
-### 3. Mathematical Iteration & Nested Loop Processing
-Demonstrates calculating numerical squares within a sequence and multi-dimensional matrix iteration using nested `for` loops.
+### 3. Numerical Sequence Calculations & Dynamic Matrix Processing
 
 ![Square Calculations and Nested Loops](./screenshot/PHP_Square_Calculation_And_Nested_Loops.png)
 
----
-
-## 🛠️ Core Concepts Implemented
-
-### 1. Constants & Scope
-- **`define()` Construct:** Declaring immutable global values accessible throughout the script context without dynamic reassignment.
-
-### 2. Conditional Branching
-- **`if / else` Statements:** Testing Boolean expressions to control code execution flow.
-- **`switch` Control Structure:** Evaluating discrete values against multiple case branches efficiently.
-- **Ternary Operator (`? :`):** Writing inline, concise conditional evaluations to streamline output assignments.
-
-### 3. Iteration & Loops
-- **`while` Loop:** Entry-controlled loop executing code blocks as long as the underlying condition remains true.
-- **`do-while` Loop:** Exit-controlled loop ensuring guaranteed execution at least once prior to condition check.
-- **Standard `for` Loop:** Counter-based iteration used for fixed execution cycles and sequence processing (e.g., calculating squares of numbers $1$ to $10$).
-- **Nested `for` Loops:** Combining inner and outer loops to construct dynamic grid/matrix-style operations (5x5 Row and Column calculations).
+#### 📝 Technical Overview & Code Breakdown:
+* **Sequence `for` Loops:** Bounded counter iterations (`for ($i = 1; $i <= 10; $i++)`) executing mathematical transformations[cite: 32]. Evaluates numerical square values (`$i * $i`) via standard string concatenation (`.`)[cite: 32, 34].
+* **Nested Matrix Generation:** Combines outer row iteration ($1 \to 5$) with inner column iteration ($1 \to 5$)[cite: 33]. Computes dynamic grid values ($Row \times Column$) inside a $5 \times 5$ execution matrix[cite: 33].
