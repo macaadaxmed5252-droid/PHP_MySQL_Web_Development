@@ -11,7 +11,7 @@
 
     <?php
 
-    // SECTION 1: 
+    // SECTION 1: Basic Output and Variables 
 
     // Output heading with echo
     echo "<h1> Welcome to home php file </h1>";
@@ -37,12 +37,7 @@
     // Output variable inside a string
     echo "my name is $Fullname";
 
-
-    
-
-
-
-    // SECTION 2: 
+    // SECTION 2: String Functions 
 
     // Create a string variable
     $my_str = 'Welcome to PHP Republic';
