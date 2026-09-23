@@ -3,96 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Arrays & Data Structures</title>
 </head>
 <body>
-   
+
 <?php
+    // ==========================================
+    // 1. NUMERIC / INDEXED ARRAYS
+    // ==========================================
 
- // creating array - numeric array
+    // Explicit array declaration
+    $names = array();
 
- // first way to create array
+    // Element initialization with mixed types
+    $names[0] = "CA233 is the best class";
+    $names[1] = 123;
+    $names[]  = 12.34; // Auto-indexed position [2]
 
- $names = array ();
+    // Direct Element Access Output
+    echo $names[0] . "<br>";
+    echo $names[1] . "<br>";
+    echo $names[2] . "<br><br>";
 
- // second way to initialize array
- $names [0] = "CA233 is the best class";
- $names [1] = 123;
- $names [] = 12.34;
+    // Array Debugging Strategies
+    var_dump($names);
+    echo "<br><br>";
 
- echo $names [0] . "<br>";
- echo $names [1] . "<br>";
- echo $names [2] . "<br>";
-
-
- // display 
- var_dump($names);
-
-
- // display all the values using pre tag
-
- echo "<pre>";
- print_r($names);
- echo "</pre>";
-
-
- echo "<br>";
-
- echo "<pre>";
- var_dump($names);
- echo "</pre>";
-
- // using for loop
-
-  echo "<h3> For loop </h3> <br>";
-
-
-
-    for ($i = 0; $i < count ($names); $i++){
-        echo $names[$i] . "<br>";
-    };
-
-    // another way using index 
-
-    for ($i = 0; $i <count ($names); $i++ ){
-        echo "Index: " . $i . "| Value:" . $names[$i] . "<br>";
-    }
-        
-
-
-    // Associative arrays
-    echo "<h3> Associative arrays </h3> <br>";
-
-    $info = array (
-        "id" => "101",
-        "name"=> "muad ahmed hassan",
-        "age"=> 20,
-        "address"=> "dharkynly",
-        "status" => "single",
-        "weight"=> 170.9
-
-    );
+    // Structured Array Output using HTML <pre>
+    echo "<pre>";
+    print_r($names);
+    echo "</pre>";
 
     echo "<pre>";
-    echo "information about the person: <br>";
+    var_dump($names);
+    echo "</pre>";
+
+    // Iterating Indexed Array via standard 'for' loop
+    echo "<h3>Indexed Array Iteration (Standard)</h3>";
+    for ($i = 0; $i < count($names); $i++) {
+        echo $names[$i] . "<br>";
+    }
+
+    // Iterating Indexed Array with explicit index tracking
+    echo "<h3>Indexed Array Iteration (With Index Label)</h3>";
+    for ($i = 0; $i < count($names); $i++) {
+        echo "Index: " . $i . " | Value: " . $names[$i] . "<br>";
+    }
+
+    // ==========================================
+    // 2. ASSOCIATIVE ARRAYS
+    // ==========================================
+    echo "<h3>Associative Array Definition</h3>";
+
+    $info = array(
+        "id"      => "101",
+        "name"    => "muad ahmed hassan",
+        "age"     => 20,
+        "address" => "dharkynly",
+        "status"  => "single",
+        "weight"  => 170.9
+    );
+
+    // Formatted Associative Output
+    echo "<pre>";
+    echo "Information about the person:<br>";
     print_r($info);
     var_dump($info);
     echo "</pre>";
 
-    // using for loop
-    echo "<h3> Using for loop </h3> <br>";
+    // Iterating Associative Array via array_keys() & for loop
+    echo "<h3>Associative Array Iteration (array_keys)</h3>";
     $keys = array_keys($info);
 
-    for ($i = 0; $i < count ($keys); $i++){
+    for ($i = 0; $i < count($keys); $i++) {
         $key = $keys[$i];
         echo $key . ": " . $info[$key] . "<br>";
-
     }
-
-
-
-
-
 ?>
 
 </body>
