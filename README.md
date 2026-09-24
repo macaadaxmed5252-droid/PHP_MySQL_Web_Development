@@ -39,9 +39,9 @@ This repository documents my academic journey and technical coursework in modern
 
 ---
 
-## 📁 Repository Structure
+## 📂 Repository Architecture & Structure
 
-```text
+```tree
 .
 ├── Week-One/
 │   ├── screenshot/
@@ -51,9 +51,12 @@ This repository documents my academic journey and technical coursework in modern
 │   └── README.md
 ├── Week-two/
 │   ├── screenshot/
+│   │   ├── PHP_Associative_Arrays_Iteration.png
 │   │   ├── PHP_Constants_And_Conditionals.png
+│   │   ├── PHP_Indexed_Arrays_And_Loops.png
 │   │   ├── PHP_Square_Calculation_And_Nested_Loops.png
 │   │   └── PHP_Ternary_And_Basic_Loops.png
 │   ├── Index.php
+│   ├── Lessont2.php
 │   └── README.md
 └── README.md
