@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Assignment 1</title>
 </head>
+
 <body>
 
-<div style="margin: 20px;">
+    <div style="margin: 20px;">
 
-    <h1>PHP Assignment 1</h1>
+        <h1>PHP Assignment 1</h1>
 
-    <?php
+        <?php
         // ---------------------------------------------------------
         // Question 1: Find Greatest and Smallest among 3 numbers
         // ---------------------------------------------------------
@@ -207,9 +209,62 @@
                 echo $n . " ";
             }
         }
-    ?>
 
-</div>
+        // 1. Declare 2D Associative Array using array() syntax
+        $students = array(
+            "CA221" => array(
+                "Name"    => "Mohamed Ahmed Ali",
+                "Phone"   => "0648440403",
+                "Address" => "Laba Dhagax, Wardhiigley"
+            ),
+            "CA223" => array(
+                "Name"    => "Ahmed Abdi Jama",
+                "Phone"   => "0647223201",
+                "Address" => "Taleex, Hodan"
+            ),
+            "CA202" => array(
+                "Name"    => "Amina Nur Adan",
+                "Phone"   => "0646990276",
+                "Address" => "Macmacaanka, Dharkeynley"
+            )
+        );
+
+        // 2. Print HTML Table
+        echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse: collapse;'>";
+
+        // Render Table Header
+        echo "<tr bgcolor='#f2f2f2'>";
+        echo "<th>Row Key</th>";
+        echo "<th>Name</th>";
+        echo "<th>Phone</th>";
+        echo "<th>Address</th>";
+        echo "</tr>";
+
+        // Outer loop: Iterates through each row (CA221, CA223, CA202)
+        foreach ($students as $rowKey => $columns) {
+            echo "<tr>";
+
+            // Print outer row key
+            echo "<td>" . $rowKey . "</td>";
+
+            // Inner loop: Iterates through every associative column ("Name", "Phone", "Address")
+            foreach ($columns as $columnName => $value) {
+                echo "<td>" . $value . "</td>";
+            }
+
+            echo "</tr>";
+        }
+
+        echo "</table>";
+
+        echo $students ["CA202"]["Address"]
+
+
+
+        ?>
+
+    </div>
 
 </body>
+
 </html>
