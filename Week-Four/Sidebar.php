@@ -13,6 +13,10 @@
                 <i class="fas fa-users"></i>
                 Student Profiles
             </a>
+            <a class="sidebar-link" href="#register">
+                <i class="fas fa-user-plus"></i>
+                Register Student
+            </a>
             <a class="sidebar-link" href="#courses">
                 <i class="fas fa-book-open"></i>
                 Student Courses

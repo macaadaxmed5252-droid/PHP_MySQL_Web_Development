@@ -84,6 +84,8 @@
         </div>
     </section>
 
+    <?php include_once("form_register.php"); ?>
+
     <section id="courses" class="section-bg">
         <div class="section-header">
             <div>

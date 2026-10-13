@@ -16,6 +16,9 @@
                     <a class="nav-link" href="#students">Students</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#register">Register</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#courses">Courses</a>
                 </li>
                 <li class="nav-item">

@@ -1,3 +1,18 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    $sessionPath = __DIR__ . DIRECTORY_SEPARATOR . ".sessions";
+
+    if (!is_dir($sessionPath)) {
+        mkdir($sessionPath, 0777, true);
+    }
+
+    if (is_dir($sessionPath) && is_writable($sessionPath)) {
+        session_save_path($sessionPath);
+    }
+
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -311,6 +326,123 @@
             background: rgba(22, 160, 133, 0.12);
             color: #0d7f69;
             font-weight: 800;
+        }
+
+        .register-section .form-label {
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .required-mark {
+            color: var(--danger);
+        }
+
+        .form-control,
+        .form-select {
+            min-height: 46px;
+            border-color: var(--line);
+            border-radius: 8px;
+            color: var(--ink);
+        }
+
+        .form-control:focus,
+        .form-select:focus,
+        .form-check-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(31, 79, 143, 0.16);
+        }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+            gap: 10px;
+        }
+
+        .choice-tile {
+            min-height: 46px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font-weight: 700;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .choice-tile:hover {
+            border-color: var(--primary);
+            background: var(--soft);
+        }
+
+        .choice-tile .form-check-input {
+            margin: 0;
+            flex: 0 0 auto;
+        }
+
+        .registration-summary {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(31, 79, 143, 0.08), rgba(22, 160, 133, 0.1));
+            padding: 18px;
+        }
+
+        .summary-icon {
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 1.25rem;
+        }
+
+        .summary-label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .registered-list {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+            padding: 18px;
+        }
+
+        .registered-title {
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .registered-table thead th {
+            background: var(--soft);
+        }
+
+        .registered-name,
+        .registered-email {
+            display: block;
+        }
+
+        .registered-email {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .btn-outline-danger {
+            border-radius: 8px;
+            font-weight: 700;
         }
 
         .event-list .list-group-item {
